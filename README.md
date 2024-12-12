@@ -1,14 +1,31 @@
-# Sample Hardhat Project
+# NFT Mint Smart Contract
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This Solidity smart contract implements an ERC721 token for NFT minting with access control and supply limitations.  
+Only an authorized wallet (backend wallet) is allowed to mint NFTs.
 
-Try running some of the following tasks:
+## Setup
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
+1. Install Dependencies
+
+```ssh
+npm install
 ```
-# SmartContract
+
+2. Environment Configuration
+
+```ssh
+PRIVATE_KEY_TESTNET=<Your_Private_Key>
+ETHERSCAN_API_KEY=<ETHERSCAN_API_KEY>
+```
+
+## Compile
+
+```ssh
+npx hardhat compile
+```
+
+## deploy
+
+```ssh
+npx hardhat run scripts/deploy.ts --network sepolia
+```

@@ -18,6 +18,7 @@ contract NFTMint is ERC721, Ownable {
     constructor(
         address _minter
     ) ERC721("SepoliaNFT", "SPLNFT") Ownable(msg.sender) {
+        require(_minter != address(0), "Invalid minter");
         minter = _minter;
     }
 
